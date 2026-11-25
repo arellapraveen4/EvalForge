@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: evalforge
+      POSTGRES_USER: evalforge
+      POSTGRES_PASSWORD: evalforge
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://evalforge:evalforge@db:5432/evalforge
+      JWT_SECRET: ${JWT_SECRET:-change-this-production-secret}
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "task_001",
+    "category": "general_knowledge",
+    "task_type": "pairwise",
+    "prompt": "What is the capital of France?",
+    "response_a": "Paris is the capital of France.",
+    "response_b": "Berlin is the capital of France.",
+    "reference_answer": "Paris",
+    "difficulty": "easy"
+  },
+  {
+    "id": "task_002",
+    "category": "reasoning",
+    "task_type": "pairwise",
+    "prompt": "What is 15 multiplied by 12?",
+    "response_a": "180",
+    "response_b": "172",
+    "reference_answer": "180",
+    "difficulty": "easy"
+  },
+  {
+    "id": "task_003",
+    "category": "instruction_following",
+    "task_type": "pairwise",
+    "prompt": "List exactly three programming languages.",
+    "response_a": "Python, Java, C++",
+    "response_b": "Python, Java, C++, JavaScript",
+    "reference_answer": null,
+    "difficulty": "easy"
+  },
+  {
+    "id": "task_004",
+    "category": "groundedness",
+    "task_type": "single",
+    "prompt": "When was the company founded?",
+    "context": "The company was founded in 2018 in Hyderabad.",
+    "response_a": "The company was founded in 2015 in Bengaluru.",
+    "response_b": "The company was founded in 2018 in Hyderabad.",
+    "reference_answer": "2018, Hyderabad",
+    "difficulty": "medium"
+  }
+]
